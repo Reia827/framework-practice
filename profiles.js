@@ -17,22 +17,25 @@ let gators = [
   }
 ]
 
-Vue.component(‘headline’, {
- props: [‘title’],
- template: ‘<h1><img src=“alligator-logo.png” alt=“Alligator Logo”>{{title}}</h1>’
-})
-
 document.addEventListener("DOMContentLoaded", function(){
 
-profileListings = new Vue({
-  el: '#profileListings',
-  data: {
-    profiles: gators
-  }
-})
-
-let headerApp = new Vue({
-  el: '#headerApp'
+  let profileListings = new Vue({
+    el: '#profileListings',
+    data: {
+      profiles: gators,
+      icecreamOnly: false
+    },
+    methods: {
+     icecreamFilter: function(){
+       if(this.icecreamOnly){
+         this.profiles = gators.filter(function(element){
+           return element.likesIceCream
+         })
+       } else {
+         this.profiles = gators
+       }
+     }
+   }
 })
 
 })
