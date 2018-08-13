@@ -26,16 +26,20 @@ document.addEventListener("DOMContentLoaded", function(){
       icecreamOnly: false
     },
     methods: {
-     icecreamFilter: function(){
-       if(this.icecreamOnly){
-         this.profiles = gators.filter(function(element){
-           return element.likesIceCream
-         })
-       } else {
-         this.profiles = gators
-       }
-     }
-   }
+      icecreamFilter: function(){
+        if(this.icecreamOnly){
+          this.profiles = gators.filter(function(element){
+            return element.likesIceCream
+          })
+        } else {
+          this.profiles = gators
+        }
+      }
+    }
+  })
+
 })
+
+
 
 })
